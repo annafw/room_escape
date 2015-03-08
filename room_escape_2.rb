@@ -1,7 +1,8 @@
 # Step 2 - 
 #  - Encapsulate the welcome in a method
 #  - Print instructions
-#  - Ask for next move
+#  - Commands h, q
+#
 # To run: ruby room_escape_2.rb
 
 def print_welcome
@@ -13,13 +14,14 @@ end
 
 def print_instructions
   puts "h - Print these instructions"
-  puts "m - Move"
   puts "q - Quit"
 end
 
+# We are storing the input in a variable then printing it out.
 def prompt
   print "Command? > "
   input = gets.chomp
+  puts "You said: #{input}"
   prompt
 end
 

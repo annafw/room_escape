@@ -1,4 +1,9 @@
 #
+# get key
+# open door
+# Ruby pattern matching - I'll provide a function to look at two words:
+# command[space]object
+
 # Design your rooms.
 #  Start in one room.
 # 
@@ -49,6 +54,10 @@ def prompt
   when "m"
     move
     prompt
+  when input.match(/get/)
+    get(input)
+  when input.match(/open/)
+    open(input)
   else
     puts "What??"
     prompt
