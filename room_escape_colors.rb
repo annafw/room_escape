@@ -1,11 +1,19 @@
-# Step 4
-#  - Let's do something with the key and the door
-#  - Let's throw in a random monster
-#  - Do you want other puzzles in your room?
-#  - Do you want to fight a monster?
+# let's add some color!
+# On mac or linux:
+#  gem install colorize
 
-# [] is an array or a list of things. in this
-# case we'll be storing the names of the things.
+# test it out in irb:
+# └─[$] irb                                                                                                             [16:24:00]
+# irb(main):001:0> require 'colorize'
+# => true
+# irb(main):002:0> String.colors
+# => [:black, :light_black, :red, :light_red, :green, :light_green, :yellow, :light_yellow, :blue, :light_blue, :magenta, :light_magenta, :cyan, :light_cyan, :white, :light_white, :default]
+# irb(main):003:0> String.modes
+# => [:default, :bold, :underline, :blink, :swap, :hide]
+
+# We need to use the library
+require 'colorize'
+
 @inventory = []
 @things_to_get = [ "key" ]
 
@@ -16,9 +24,9 @@ def start_game
 end
 
 def print_welcome
-  puts "<><><><><><><><><><><><><><><><><><><><><><><>"
-  puts "<><><> Welcome to the Super Spooky Room <><><>"
-  print "Try to escape...If you dare!"
+  puts "<><><><><><><><><><><><><><><><><><><><><><><>".yellow
+  puts "<><><> Welcome to the Super Spooky Room <><><>".yellow
+  print "Try to escape...If you dare!".yellow
   puts
 end
 
@@ -93,9 +101,9 @@ def monster
 end
 
 def monster_attack
-  puts " The door opens ... to reveal a fierce zombie!"
-  puts " The zombie bites you, and you are turned into a zombie!"
-  puts " Better luck next time!"
+  puts " The door opens ... to reveal a fierce zombie!".red
+  puts " The zombie bites you, and you are turned into a zombie!".red.blink
+  puts " Better luck next time!".yellow
   puts ""
   exit
 end
