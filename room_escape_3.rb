@@ -13,6 +13,8 @@
 #   mysentence.split('')
 # - Allow someone to type H or h (use downcase)
 # - Add Commands: look, get, open
+# - Control flow with if or case statements
+# - Regular expressions
 # To run: ruby room_escape_3.rb
 
 def print_welcome
@@ -39,7 +41,9 @@ def look
 end
 
 def end_game
-  abort("Leaving so soon?")
+  puts " Leaving so soon?"
+  puts
+  exit
 end
 
 def get_command(input)
@@ -90,6 +94,3 @@ end
 print_welcome
 print_instructions
 prompt
-
-
-
