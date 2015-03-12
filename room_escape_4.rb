@@ -12,7 +12,9 @@
 def start_game
   print_welcome
   print_instructions
-  prompt
+  loop do
+    prompt
+  end
 end
 
 def print_welcome
@@ -50,7 +52,6 @@ def get_command(input)
   words = input.split(' ')
   if words.length < 2
     puts " What do you want to get?"
-    prompt
   else
     target = words[1]
     if @inventory.include?(target)
@@ -68,7 +69,6 @@ def open_command(input)
   words = input.split(' ')
   if words.length < 2
     puts " What do you want to open?"
-    prompt
   else
     target = words[1]
     if target.downcase == "door" && @inventory.include?("key")
@@ -123,7 +123,6 @@ def prompt
   else
     puts "What??"
   end
-  prompt
 end
 
 start_game

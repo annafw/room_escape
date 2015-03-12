@@ -88,9 +88,10 @@ def prompt
   else
     puts "What??"
   end
-  prompt
 end
 
 print_welcome
 print_instructions
-prompt
+loop do
+  prompt
+end
