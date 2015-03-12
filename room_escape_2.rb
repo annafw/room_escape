@@ -1,4 +1,4 @@
-# Step 2 - 
+# Step 2 -
 #  - Encapsulate the welcome in a method
 #  - Print instructions
 #  - Commands h, q
@@ -22,12 +22,10 @@ def prompt
   print "Command? > "
   input = gets.chomp
   puts "You said: #{input}"
-  prompt
 end
 
 print_welcome
 print_instructions
-prompt
-
-
-
+loop do
+  prompt
+end
